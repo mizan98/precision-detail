@@ -19,15 +19,32 @@
     </v-img>
   </v-container>
   <v-container class="" id="info-container" fluid>
-    <v-row>
-      <div id="action-btns">
-        <v-btn>VALET SERVICES</v-btn>
-        <v-btn>BODYWORK DETAILING</v-btn>
-        <v-btn>INTERIOR DETAIL</v-btn>
-        <v-btn>SMART REPAIRS</v-btn>
-        <v-btn>LEATHER RESTORATION</v-btn>
-        <v-btn>ALLOY REFURBISHMENTS</v-btn>
-      </div>
+    <v-row no-gutters justify="center">
+      <v-col cols="4" class="d-flex justify-center">
+        <v-btn color="transparent" class="text-green-lighten-1"
+          >LEATHER RESTORATION</v-btn
+        >
+      </v-col>
+      <v-divider
+        class="border-opacity-100"
+        color="success"
+        vertical
+      ></v-divider>
+      <v-col cols="4" class="d-flex justify-center">
+        <v-btn color="transparent" class="text-green-lighten-1"
+          >DETAILING</v-btn
+        >
+      </v-col>
+      <v-divider
+        class="border-opacity-100"
+        color="success"
+        vertical
+      ></v-divider>
+      <v-col cols="4" class="d-flex justify-center">
+        <v-btn color="transparent" class="text-green-lighten-1"
+          >BODY REPAIR</v-btn
+        >
+      </v-col>
     </v-row>
     <v-row>
       <v-col cols="2" class="pa-2 ma-2">
