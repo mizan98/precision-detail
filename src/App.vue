@@ -13,9 +13,24 @@
 
       <!-- App bar navigation options for larger screens -->
       <v-row v-else class="mr-2">
-        <v-btn @click="navigateTo('/services')">Services</v-btn>
+        <v-spacer></v-spacer>
+        <div class="d-flex justify-space-around">
+          <v-menu open-on-hover>
+            <template v-slot:activator="{ props }">
+              <v-btn v-bind="props"> SERVICES </v-btn>
+            </template>
+            <v-list>
+              <v-list-item
+                v-for="(item, index) in serviceItems"
+                :key="index"
+                :value="index"
+              >
+                <v-list-item-title>{{ item.title }}</v-list-item-title>
+              </v-list-item>
+            </v-list>
+          </v-menu>
+        </div>
         <v-btn @click="navigateTo('/portfolio')">Portfolio</v-btn>
-        <v-btn @click="navigateTo('/testimonials')">Testimonials</v-btn>
         <v-btn @click="navigateTo('/about')">About Us</v-btn>
         <v-btn @click="navigateTo('/contact')">Contact Us</v-btn>
       </v-row>
@@ -33,10 +48,29 @@
         <v-list-item
           v-for="item in menuItems"
           :key="item.title"
-          @click="navigateTo(item.path)"
+          @click="item.children ? toggleItem(item) : navigateTo(item.path)"
         >
-          <v-list-item-title>{{ item.title }}</v-list-item-title>
+          <v-list-item-title>
+            {{ item.title }}
+          </v-list-item-title>
         </v-list-item>
+
+        <v-list-group v-if="menuItems" v-model="showSubItems">
+          <template v-slot:activator>
+            <v-list-item-content>
+              <v-list-item-title> Services </v-list-item-title>
+            </v-list-item-content>
+          </template>
+          <v-list-item @click="navigateTo('/services/leather')"
+            >LEATHER RESTORATION</v-list-item
+          >
+          <v-list-item @click="navigateTo('/services/detailing')"
+            >DETAILING</v-list-item
+          >
+          <v-list-item @click="navigateTo('/services/repair')"
+            >BODY REPAIR</v-list-item
+          >
+        </v-list-group>
       </v-list>
     </v-navigation-drawer>
 
@@ -52,15 +86,30 @@ import { useRouter } from "vue-router";
 const drawer = ref(false);
 const router = useRouter();
 
-const menuItems = [
-  { title: "Home", path: "/" },
-  { title: "Services", path: "/services" },
-  { title: "Portfolio", path: "/portfolio" },
-  { title: "Testimonials", path: "/testimonials" },
-  { title: "About Us", path: "/about" },
-  { title: "Contact Us", path: "/contact" },
+const serviceItems = [
+  { title: "Click Me" },
+  { title: "Click Me" },
+  { title: "Click Me" },
+  { title: "Click Me 2" },
 ];
 
+const menuItems = [
+  { title: "Home", path: "/" },
+  { title: "Portfolio", path: "/portfolio" },
+  { title: "About Us", path: "/about" },
+  { title: "Contact Us", path: "/contact" },
+  {
+    title: "Services",
+    children: [
+      { title: "LEATHER RESTORATION", path: "/services/leather" },
+      { title: "DETAILING", path: "/services/detailing" },
+      { title: "BODY REPAIR", path: "/services/repair" },
+    ],
+    expanded: false,
+  },
+];
+
+let showSubItems = false;
 const isMobile = ref(window.innerWidth <= 980);
 
 const checkMobile = () => {
@@ -81,5 +130,10 @@ onUnmounted(() => {
 function navigateTo(path: string) {
   drawer.value = false; // Close the drawer on navigation
   router.push(path);
+}
+
+function toggleItem(item: { expanded: boolean }) {
+  item.expanded = !item.expanded;
+  showSubItems = item.expanded;
 }
 </script>
