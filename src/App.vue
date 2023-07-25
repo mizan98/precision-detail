@@ -17,7 +17,9 @@
         <div class="d-flex justify-space-around">
           <v-menu open-on-hover>
             <template v-slot:activator="{ props }">
-              <v-btn v-bind="props"> SERVICES </v-btn>
+              <v-btn @click="navigateTo('/services')" v-bind="props">
+                SERVICES
+              </v-btn>
             </template>
             <v-list>
               <v-list-item
@@ -40,7 +42,7 @@
     <v-navigation-drawer
       temporary
       absolute
-      color="green"
+      color="black"
       v-model="drawer"
       v-if="isMobile"
     >
@@ -48,29 +50,12 @@
         <v-list-item
           v-for="item in menuItems"
           :key="item.title"
-          @click="item.children ? toggleItem(item) : navigateTo(item.path)"
+          @click="navigateTo(item.path)"
         >
-          <v-list-item-title>
-            {{ item.title }}
-          </v-list-item-title>
+          <v-list-item-title class="text-green-lighten-1">{{
+            item.title
+          }}</v-list-item-title>
         </v-list-item>
-
-        <v-list-group v-if="menuItems" v-model="showSubItems">
-          <template v-slot:activator>
-            <v-list-item-content>
-              <v-list-item-title> Services </v-list-item-title>
-            </v-list-item-content>
-          </template>
-          <v-list-item @click="navigateTo('/services/leather')"
-            >LEATHER RESTORATION</v-list-item
-          >
-          <v-list-item @click="navigateTo('/services/detailing')"
-            >DETAILING</v-list-item
-          >
-          <v-list-item @click="navigateTo('/services/repair')"
-            >BODY REPAIR</v-list-item
-          >
-        </v-list-group>
       </v-list>
     </v-navigation-drawer>
 
@@ -95,21 +80,12 @@ const serviceItems = [
 
 const menuItems = [
   { title: "Home", path: "/" },
+  { title: "Services", path: "/services" },
   { title: "Portfolio", path: "/portfolio" },
   { title: "About Us", path: "/about" },
   { title: "Contact Us", path: "/contact" },
-  {
-    title: "Services",
-    children: [
-      { title: "LEATHER RESTORATION", path: "/services/leather" },
-      { title: "DETAILING", path: "/services/detailing" },
-      { title: "BODY REPAIR", path: "/services/repair" },
-    ],
-    expanded: false,
-  },
 ];
 
-let showSubItems = false;
 const isMobile = ref(window.innerWidth <= 980);
 
 const checkMobile = () => {
@@ -130,10 +106,5 @@ onUnmounted(() => {
 function navigateTo(path: string) {
   drawer.value = false; // Close the drawer on navigation
   router.push(path);
-}
-
-function toggleItem(item: { expanded: boolean }) {
-  item.expanded = !item.expanded;
-  showSubItems = item.expanded;
 }
 </script>

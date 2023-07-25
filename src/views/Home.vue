@@ -19,33 +19,26 @@
     </v-img>
   </v-container>
   <v-container class="" id="info-container" fluid>
-    <v-row no-gutters justify="center">
-      <v-col cols="4" class="d-flex justify-center">
-        <v-btn color="transparent" class="text-green-lighten-1"
-          >LEATHER RESTORATION</v-btn
-        >
-      </v-col>
-      <v-divider
-        class="border-opacity-100"
-        color="success"
-        vertical
-      ></v-divider>
-      <v-col cols="4" class="d-flex justify-center">
-        <v-btn color="transparent" class="text-green-lighten-1"
-          >DETAILING</v-btn
-        >
-      </v-col>
-      <v-divider
-        class="border-opacity-100"
-        color="success"
-        vertical
-      ></v-divider>
-      <v-col cols="4" class="d-flex justify-center">
-        <v-btn color="transparent" class="text-green-lighten-1"
-          >BODY REPAIR</v-btn
-        >
-      </v-col>
-    </v-row>
+    <v-tabs
+      class="text-green-lighten-1"
+      v-model="tab"
+      bg-color="transparent"
+      fixed-tabs
+    >
+      <v-tab value="one">LEATHER RESTORATION</v-tab>
+      <v-tab value="two">DETAILING</v-tab>
+      <v-tab value="three">BODY REPAIR</v-tab>
+    </v-tabs>
+
+    <v-card-text>
+      <v-window class="text-white" v-model="tab">
+        <v-window-item value="one"> One </v-window-item>
+
+        <v-window-item value="two"> Two </v-window-item>
+
+        <v-window-item value="three"> Three </v-window-item>
+      </v-window>
+    </v-card-text>
     <v-row>
       <v-col cols="2" class="pa-2 ma-2">
         <v-img
@@ -121,4 +114,6 @@
 
 <script lang="ts" setup>
 import { ref } from "vue";
+
+const tab = ref(null);
 </script>
