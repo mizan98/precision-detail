@@ -58,7 +58,33 @@
     <div>
       <v-row no-gutters>
         <v-col class="pa-2" cols="md-6 sm-12 xs-12">
+          <v-carousel height="400" width="400px">
+            <v-carousel-item
+              v-for="(item, i) in imageItems"
+              :key="i"
+              :src="item.src"
+            >
+              <v-img :src="item.src"></v-img>
+            </v-carousel-item>
+          </v-carousel>
           <v-card>
+            <v-carousel>
+              <v-carousel-item
+                height="350"
+                src="../assets/1a419a1b56a.jpg"
+                cover
+              ></v-carousel-item>
+
+              <v-carousel-item
+                src="../assets/4d10301514b.jpg"
+                cover
+              ></v-carousel-item>
+
+              <v-carousel-item
+                src="../assets/992dcfbd2f51.jpg"
+                cover
+              ></v-carousel-item>
+            </v-carousel>
             <v-card-text
               >Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nostrum
               similique quis obcaecati libero enim deserunt corporis aliquid,
@@ -141,5 +167,39 @@
 <script lang="ts" setup>
 import { ref } from "vue";
 
-const tab = ref(null);
+const imageItems = [
+  {
+    src: "../assets/1a419a1b56a.jpg",
+  },
+  {
+    src: "../assets/992dcfbd2f51.jpg",
+  },
+  {
+    src: "../assets/c08162eb8ce3.jpg",
+  },
+  {
+    src: "../assets/4d10301514b.jpg",
+  },
+  {
+    src: "../assets/ff0ba2c3403a.jpg",
+  },
+  {
+    src: "../assets/bf51d58e2f22.jpg",
+  },
+];
+
+const items = [
+  {
+    src: "../assets/1a419a1b56a.jpg",
+  },
+  {
+    src: "https://cdn.vuetifyjs.com/images/carousel/sky.jpg",
+  },
+  {
+    src: "https://cdn.vuetifyjs.com/images/carousel/bird.jpg",
+  },
+  {
+    src: "https://cdn.vuetifyjs.com/images/carousel/planet.jpg",
+  },
+];
 </script>
