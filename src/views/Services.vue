@@ -1,13 +1,10 @@
 <template>
-  <v-container fluid class="pa-0">
-    <v-parallax
-      class="pa-0"
-      id="home-bg-img"
-      src="../assets/tyler-clemmensen-d1Jum1vVLew-unsplash.jpg"
-    >
-      <div id="gradient-overlay-top"></div>
-      <div id="gradient-overlay-bottom"></div>
-    </v-parallax>
+  <v-container fluid class="pt-10">
+    <v-card>
+      <div>
+        <v-card><h1>testing tgext element</h1></v-card>
+      </div>
+    </v-card>
   </v-container>
   <!-- Rest of your content goes here -->
 </template>

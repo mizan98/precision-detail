@@ -39,22 +39,14 @@
     </v-app-bar>
 
     <!-- Navigation drawer -->
-    <v-navigation-drawer
-      temporary
-      absolute
-      color="black"
-      v-model="drawer"
-      v-if="isMobile"
-    >
+    <v-navigation-drawer temporary absolute v-model="drawer" v-if="isMobile">
       <v-list>
         <v-list-item
           v-for="item in menuItems"
           :key="item.title"
           @click="navigateTo(item.path)"
         >
-          <v-list-item-title class="text-green-lighten-1">{{
-            item.title
-          }}</v-list-item-title>
+          <v-list-item-title class="">{{ item.title }}</v-list-item-title>
         </v-list-item>
       </v-list>
     </v-navigation-drawer>

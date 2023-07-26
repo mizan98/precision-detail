@@ -6,6 +6,12 @@
       src="../assets/tyler-clemmensen-d1Jum1vVLew-unsplash.jpg"
     >
       <div id="gradient-overlay-top"></div>
+      <div class="d-flex fill-height align-center justify-start">
+        <v-card rounded="0" elevation="0">
+          <v-card-title>Call us:</v-card-title>
+          <v-card-text>07967 374 235</v-card-text>
+        </v-card>
+      </div>
       <div class="pa-0 ma-0" id="gradient-overlay-bottom"></div>
     </v-parallax>
     <v-img
@@ -15,67 +21,51 @@
       src="../assets/tyler-clemmensen-d1Jum1vVLew-unsplash.jpg"
     >
       <div id="gradient-overlay-top"></div>
+      <div class="d-flex fill-height align-end justify-center">
+        <v-card rounded="0" elevation="0">
+          <v-card-title>Call us</v-card-title>
+          <v-card-text>07967 374 235</v-card-text>
+        </v-card>
+      </div>
       <div class="pa-0 ma-0" id="gradient-overlay-bottom"></div>
     </v-img>
   </v-container>
-  <v-container class="" id="info-container" fluid>
-    <v-tabs
-      class="text-green-lighten-1"
-      v-model="tab"
-      bg-color="transparent"
-      fixed-tabs
-    >
-      <v-tab value="one">LEATHER RESTORATION</v-tab>
-      <v-tab value="two">DETAILING</v-tab>
-      <v-tab value="three">BODY REPAIR</v-tab>
-    </v-tabs>
-
-    <v-card-text>
-      <v-window class="text-white" v-model="tab">
-        <v-window-item value="one"> One </v-window-item>
-
-        <v-window-item value="two"> Two </v-window-item>
-
-        <v-window-item value="three"> Three </v-window-item>
-      </v-window>
-    </v-card-text>
-    <v-row>
-      <v-col cols="2" class="pa-2 ma-2">
-        <v-img
-          class="pr-0"
-          src="../assets/Screenshot 2023-07-21 214649.png"
-          style="height: 100%; width: 100%; object-fit: cover"
-        ></v-img>
-      </v-col>
-      <v-col cols="8">
-        <v-row class="pa-0">
-          <v-card
-            elevation="0"
-            color="transparent"
-            class="text-green pa-0 ma-0"
-            title="WELCOME"
-          >
-          </v-card>
-        </v-row>
-        <v-row class="pa-0">
-          <v-card
-            elevation="0"
-            color="transparent"
-            subtitle="EVERY DETAIL COUNTED"
-            class="text-white pa-0 ma-0"
-          >
-          </v-card>
-        </v-row>
+  <v-container id="info-container">
+    <div>
+      <v-card class="flex-1-1-100 ma-2 pa-2" elevation="0">
         <v-row>
-          <v-card
-            elevation="0"
-            color="transparent"
-            class="text-white font-weight-thin pa-0 ma-0"
-            text="Welcome to Precision Detail. We provide a mobile service as our vans are self-contained for both water and power. Not only do we specialise in valeting but we also provide a professional service in bodywork detailing, paintwork correction and paint less scratch removals. With a combination of our quality products and our skilled workmanship we deliver an excellent service and finish."
-          ></v-card>
+          <v-col>
+            <v-card-text class="text-h3">Precise Perfection.</v-card-text>
+          </v-col>
         </v-row>
-      </v-col>
-    </v-row>
+
+        <v-row>
+          <v-col>
+            <v-card-text>
+              Precision is our motto. We strive to ensure each car we work on is
+              handle with the utmost care and spare no detail. Cars are our
+              passion, our drive, and its what makes precision detail the best
+              automotive detailer in the midlands. Our services are carried to
+              thebhighest standard and ensure every customer picks up their car
+              with a smile.</v-card-text
+            >
+          </v-col>
+        </v-row>
+      </v-card>
+    </div>
+  </v-container>
+  <v-container fluid class="pa-0 ma-0" elevation="0">
+    <v-parallax src="../assets/Screenshot 2023-07-26 104058.png">
+      <div
+        class="d-flex flex-column fill-height justify-center align-center text-white"
+      >
+        <h1 class="text-h4 font-weight-thin mb-4">Spotless</h1>
+        <h4 class="subheading">Desire for perfection</h4>
+      </div>
+    </v-parallax>
+  </v-container>
+  <v-container>
+    <div></div>
   </v-container>
 </template>
 
@@ -106,9 +96,8 @@
   background-image: linear-gradient(to bottom, transparent 30%, rgb(0, 0, 0));
 }
 
-#info-container {
-  background: rgb(0, 0, 0);
-  height: 50%;
+#info-card-two {
+  bottom: 0;
 }
 </style>
 
