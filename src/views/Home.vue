@@ -1,17 +1,13 @@
 <template>
   <v-container fluid class="pa-0 ma-0">
     <v-parallax
+      height="850"
       class="pa-0 d-sm-flex d-none"
       id="home-bg-img"
       src="../assets/tyler-clemmensen-d1Jum1vVLew-unsplash.jpg"
     >
       <div id="gradient-overlay-top"></div>
-      <div class="d-flex fill-height align-center justify-start">
-        <v-card rounded="0" elevation="0">
-          <v-card-title>Call us:</v-card-title>
-          <v-card-text>07967 374 235</v-card-text>
-        </v-card>
-      </div>
+
       <div class="pa-0 ma-0" id="gradient-overlay-bottom"></div>
     </v-parallax>
     <v-img
@@ -21,26 +17,20 @@
       src="../assets/tyler-clemmensen-d1Jum1vVLew-unsplash.jpg"
     >
       <div id="gradient-overlay-top"></div>
-      <div class="d-flex fill-height align-end justify-center">
-        <v-card rounded="0" elevation="0">
-          <v-card-title>Call us</v-card-title>
-          <v-card-text>07967 374 235</v-card-text>
-        </v-card>
-      </div>
       <div class="pa-0 ma-0" id="gradient-overlay-bottom"></div>
     </v-img>
   </v-container>
   <v-container id="info-container">
     <div>
-      <v-card class="flex-1-1-100 ma-2 pa-2" elevation="0">
-        <v-row>
-          <v-col>
+      <v-card class="flex-wrap ma-2 pa-2" elevation="0">
+        <v-row no-gutters>
+          <v-col cols="sm-12 xs-12">
             <v-card-text class="text-h3">Precise Perfection.</v-card-text>
           </v-col>
         </v-row>
 
         <v-row>
-          <v-col>
+          <v-col cols="md-6 sm-12 xs-12">
             <v-card-text>
               Precision is our motto. We strive to ensure each car we work on is
               handle with the utmost care and spare no detail. Cars are our
@@ -55,7 +45,7 @@
     </div>
   </v-container>
   <v-container fluid class="pa-0 ma-0" elevation="0">
-    <v-parallax src="../assets/Screenshot 2023-07-26 104058.png">
+    <v-parallax height="300" src="../assets/Screenshot 2023-07-26 104058.png">
       <div
         class="d-flex flex-column fill-height justify-center align-center text-white"
       >
@@ -65,7 +55,54 @@
     </v-parallax>
   </v-container>
   <v-container>
-    <div></div>
+    <div>
+      <v-row no-gutters>
+        <v-col class="pa-2" cols="md-6 sm-12 xs-12">
+          <v-card>
+            <v-card-text
+              >Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nostrum
+              similique quis obcaecati libero enim deserunt corporis aliquid,
+              magnam officia, sequi architecto eligendi! Ullam error aliquid
+              dolor rerum corrupti, ut eveniet.</v-card-text
+            >
+          </v-card>
+        </v-col>
+
+        <v-col class="pa-2" cols="md-6 sm-12 xs-12">
+          <v-card>
+            <v-card-text
+              >Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod
+              ipsum ullam, quo quis reprehenderit, ut neque minima non impedit
+              atque assumenda voluptatum distinctio pariatur nam amet inventore
+              deserunt, accusamus sit.</v-card-text
+            >
+          </v-card>
+        </v-col>
+      </v-row>
+      <v-row no-gutters>
+        <v-col class="pa-2" cols="md-6 sm-12 xs-12">
+          <v-card>
+            <v-card-text
+              >Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nostrum
+              similique quis obcaecati libero enim deserunt corporis aliquid,
+              magnam officia, sequi architecto eligendi! Ullam error aliquid
+              dolor rerum corrupti, ut eveniet.</v-card-text
+            >
+          </v-card>
+        </v-col>
+
+        <v-col class="pa-2" cols="md-6 sm-12 xs-12">
+          <v-card>
+            <v-card-text
+              >Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod
+              ipsum ullam, quo quis reprehenderit, ut neque minima non impedit
+              atque assumenda voluptatum distinctio pariatur nam amet inventore
+              deserunt, accusamus sit.</v-card-text
+            >
+          </v-card>
+        </v-col>
+      </v-row>
+    </div>
   </v-container>
 </template>
 

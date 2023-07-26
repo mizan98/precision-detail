@@ -14,6 +14,10 @@
       <!-- App bar navigation options for larger screens -->
       <v-row v-else class="mr-2">
         <v-spacer></v-spacer>
+
+        <v-icon class="mdi mdi-phone-outline pr-2 justify"></v-icon>
+        <v-toolbar-title> 07967 374 235 </v-toolbar-title>
+        <v-spacer></v-spacer>
         <div class="d-flex justify-space-around">
           <v-menu open-on-hover>
             <template v-slot:activator="{ props }">
@@ -33,7 +37,6 @@
           </v-menu>
         </div>
         <v-btn @click="navigateTo('/portfolio')">Portfolio</v-btn>
-        <v-btn @click="navigateTo('/about')">About Us</v-btn>
         <v-btn @click="navigateTo('/contact')">Contact Us</v-btn>
       </v-row>
     </v-app-bar>
