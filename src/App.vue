@@ -18,31 +18,14 @@
         <v-icon class="mdi mdi-phone-outline pr-2 justify"></v-icon>
         <v-toolbar-title> 07967 374 235 </v-toolbar-title>
         <v-spacer></v-spacer>
-        <div class="d-flex justify-space-around">
-          <v-menu open-on-hover>
-            <template v-slot:activator="{ props }">
-              <v-btn @click="navigateTo('/services')" v-bind="props">
-                SERVICES
-              </v-btn>
-            </template>
-            <v-list>
-              <v-list-item
-                v-for="(item, index) in serviceItems"
-                :key="index"
-                :value="index"
-              >
-                <v-list-item-title>{{ item.title }}</v-list-item-title>
-              </v-list-item>
-            </v-list>
-          </v-menu>
-        </div>
+        <v-btn @click="scrollToTargetElement"> SERVICES </v-btn>
         <v-btn @click="navigateTo('/portfolio')">Portfolio</v-btn>
         <v-btn @click="navigateTo('/contact')">Contact Us</v-btn>
       </v-row>
     </v-app-bar>
 
     <!-- Navigation drawer -->
-    <v-navigation-drawer temporary absolute v-model="drawer" v-if="isMobile">
+    <v-navigation-drawer temporary v-model="drawer" v-if="isMobile" app>
       <v-list>
         <v-list-item
           v-for="item in menuItems"
@@ -53,9 +36,12 @@
         </v-list-item>
       </v-list>
     </v-navigation-drawer>
+    <v-main>
+      <!-- Router view to render components based on the active route -->
+      <router-view></router-view>
 
-    <!-- Router view to render components based on the active route -->
-    <router-view></router-view>
+      <v-footer></v-footer>
+    </v-main>
   </v-app>
 </template>
 
@@ -101,5 +87,14 @@ onUnmounted(() => {
 function navigateTo(path: string) {
   drawer.value = false; // Close the drawer on navigation
   router.push(path);
+}
+
+function scrollToTargetElement() {
+  router.push({ name: "Home" }).then(() => {
+    const targetElement = document.getElementById("scrollTargetElement");
+    if (targetElement) {
+      targetElement.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  });
 }
 </script>

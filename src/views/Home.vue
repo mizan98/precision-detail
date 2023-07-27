@@ -2,7 +2,7 @@
   <v-container fluid class="pa-0 ma-0">
     <v-parallax
       height="850"
-      class="pa-0 d-sm-flex d-none"
+      class="pa-0 d-sm-flex d-none hidden-sm-and-down"
       id="home-bg-img"
       src="../assets/tyler-clemmensen-d1Jum1vVLew-unsplash.jpg"
     >
@@ -10,37 +10,50 @@
 
       <div class="pa-0 ma-0" id="gradient-overlay-bottom"></div>
     </v-parallax>
-    <v-img
-      style="height: fit-content"
-      class="pa-0 d-sm-none d-flex"
-      id="home-bg-img"
-      src="../assets/tyler-clemmensen-d1Jum1vVLew-unsplash.jpg"
-    >
-      <div id="gradient-overlay-top"></div>
-      <div class="pa-0 ma-0" id="gradient-overlay-bottom"></div>
-    </v-img>
+    <v-card class="rounded-0" elevation="0">
+      <v-img
+        style="height: fit-content"
+        class="pa-0 d-sm-none d-flex"
+        id="home-bg-img"
+        src="../assets/tyler-clemmensen-d1Jum1vVLew-unsplash.jpg"
+      >
+        <div id="gradient-overlay-top"></div>
+        <v-card
+          style="height: 100%"
+          class="d-flex align-end pb-3 rounded-0 justify-center"
+          color="transparent"
+          flat
+          height="100"
+          tile
+        >
+          <v-btn @click="navigateTo('/services')">Explore</v-btn>
+          <v-btn
+            @click="navigateTo('/contact')"
+            color="white"
+            class="pa-2 mx-2"
+            style=""
+            variant="outlined"
+            >Contact Us</v-btn
+          >
+        </v-card>
+
+        <!-- <div class="pa-0 ma-0" id="gradient-overlay-bottom"></div> -->
+      </v-img>
+    </v-card>
   </v-container>
-  <v-container id="info-container">
+  <v-container>
     <div>
       <v-card class="flex-wrap ma-2 pa-2" elevation="0">
-        <v-row no-gutters>
-          <v-col cols="sm-12 xs-12">
-            <v-card-text class="text-h3">Precise Perfection.</v-card-text>
-          </v-col>
-        </v-row>
+        <h3 class="text-h3">Precise Perfection.</h3>
 
-        <v-row>
-          <v-col cols="md-6 sm-12 xs-12">
-            <v-card-text>
-              Precision is our motto. We strive to ensure each car we work on is
-              handle with the utmost care and spare no detail. Cars are our
-              passion, our drive, and its what makes precision detail the best
-              automotive detailer in the midlands. Our services are carried to
-              thebhighest standard and ensure every customer picks up their car
-              with a smile.</v-card-text
-            >
-          </v-col>
-        </v-row>
+        <v-card-text class="px-0 pb-1">
+          Precision is our motto. We strive to ensure each car we work on is
+          handle with the utmost care and spare no detail. Cars are our passion,
+          our drive, and its what makes precision detail the best automotive
+          detailer in the midlands. Our services are carried to thebhighest
+          standard and ensure every customer picks up their car with a
+          smile.</v-card-text
+        >
       </v-card>
     </div>
   </v-container>
@@ -50,25 +63,65 @@
         class="d-flex flex-column fill-height justify-center align-center text-white"
       >
         <h1 class="text-h4 font-weight-thin mb-4">Spotless</h1>
-        <h4 class="subheading">Desire for perfection</h4>
+        <h4 class="subheading">Clean factory finish</h4>
       </div>
     </v-parallax>
   </v-container>
-  <v-container>
+  <v-container class="hidden-sm-and-down" id="scrollTargetElement">
     <div>
       <v-row no-gutters>
         <v-col class="pa-2" cols="md-6 sm-12 xs-12">
-          <v-carousel height="400" width="400px">
-            <v-carousel-item
-              v-for="(item, i) in imageItems"
-              :key="i"
-              :src="item.src"
-            >
-              <v-img :src="item.src"></v-img>
-            </v-carousel-item>
-          </v-carousel>
           <v-card>
             <v-carousel>
+              <v-carousel-item
+                v-for="(item, i) in imageItems"
+                :key="i"
+                :src="item.src"
+              >
+                <v-img :src="item.src"></v-img>
+              </v-carousel-item>
+            </v-carousel>
+            <v-card-text
+              >Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nostrum
+              similique quis obcaecati libero enim deserunt corporis aliquid,
+              magnam officia, sequi architecto eligendi! Ullam error aliquid
+              dolor rerum corrupti, ut eveniet.</v-card-text
+            >
+          </v-card>
+        </v-col>
+
+        <v-col class="pa-2" cols="md-6 sm-12 xs-12">
+          <v-card>
+            <v-carousel height="500" width="300">
+              <v-carousel-item
+                height="350"
+                src="../assets/1a419a1b56a.jpg"
+                cover
+              ></v-carousel-item>
+
+              <v-carousel-item
+                src="../assets/4d10301514b.jpg"
+                cover
+              ></v-carousel-item>
+
+              <v-carousel-item
+                src="../assets/992dcfbd2f51.jpg"
+                cover
+              ></v-carousel-item>
+            </v-carousel>
+            <v-card-text
+              >Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nostrum
+              similique quis obcaecati libero enim deserunt corporis aliquid,
+              magnam officia, sequi architecto eligendi! Ullam error aliquid
+              dolor rerum corrupti, ut eveniet.</v-card-text
+            >
+          </v-card>
+        </v-col>
+      </v-row>
+      <v-row no-gutters>
+        <v-col class="pa-2" cols="md-6 sm-12 xs-12">
+          <v-card>
+            <v-carousel height="500" width="300">
               <v-carousel-item
                 height="350"
                 src="../assets/1a419a1b56a.jpg"
@@ -96,18 +149,23 @@
 
         <v-col class="pa-2" cols="md-6 sm-12 xs-12">
           <v-card>
-            <v-card-text
-              >Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod
-              ipsum ullam, quo quis reprehenderit, ut neque minima non impedit
-              atque assumenda voluptatum distinctio pariatur nam amet inventore
-              deserunt, accusamus sit.</v-card-text
-            >
-          </v-card>
-        </v-col>
-      </v-row>
-      <v-row no-gutters>
-        <v-col class="pa-2" cols="md-6 sm-12 xs-12">
-          <v-card>
+            <v-carousel height="500" width="300">
+              <v-carousel-item
+                height="350"
+                src="../assets/1a419a1b56a.jpg"
+                cover
+              ></v-carousel-item>
+
+              <v-carousel-item
+                src="../assets/4d10301514b.jpg"
+                cover
+              ></v-carousel-item>
+
+              <v-carousel-item
+                src="../assets/992dcfbd2f51.jpg"
+                cover
+              ></v-carousel-item>
+            </v-carousel>
             <v-card-text
               >Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nostrum
               similique quis obcaecati libero enim deserunt corporis aliquid,
@@ -116,18 +174,24 @@
             >
           </v-card>
         </v-col>
-
-        <v-col class="pa-2" cols="md-6 sm-12 xs-12">
-          <v-card>
-            <v-card-text
-              >Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod
-              ipsum ullam, quo quis reprehenderit, ut neque minima non impedit
-              atque assumenda voluptatum distinctio pariatur nam amet inventore
-              deserunt, accusamus sit.</v-card-text
-            >
-          </v-card>
-        </v-col>
       </v-row>
+    </div>
+  </v-container>
+  <v-container class="hidden-md-and-up" fluid style="background-color: black">
+    <div class="d-flex justify-center">
+      <v-card color="black" width="300px">
+        <v-card-text class="ma-0 px-0 text-h4">Your car is secure.</v-card-text>
+        <v-card-text class="px-0 text-white">
+          With 24/7 security monitoring and gated entrance, your car is in safe
+          hands when kept overnight. Cameras are fitted all around the unit to
+          ensure maximum safety when handing your car over to us.
+        </v-card-text>
+        <v-img
+          class="justify-start"
+          src="../assets/PXL_20230727_105640423.jpg"
+          height="50%"
+        ></v-img>
+      </v-card>
     </div>
   </v-container>
 </template>
@@ -166,25 +230,33 @@
 
 <script lang="ts" setup>
 import { ref } from "vue";
+import { useRouter } from "vue-router";
+import image1 from "../assets/1a419a1b56a.jpg";
+import image2 from "../assets/992dcfbd2f51.jpg";
+import image3 from "../assets/c08162eb8ce3.jpg";
+import image4 from "../assets/4d10301514b.jpg";
+import image5 from "../assets/ff0ba2c3403a.jpg";
+import image6 from "../assets/bf51d58e2f22.jpg";
 
+const router = useRouter();
 const imageItems = [
   {
-    src: "../assets/1a419a1b56a.jpg",
+    src: image1,
   },
   {
-    src: "../assets/992dcfbd2f51.jpg",
+    src: image2,
   },
   {
-    src: "../assets/c08162eb8ce3.jpg",
+    src: image3,
   },
   {
-    src: "../assets/4d10301514b.jpg",
+    src: image4,
   },
   {
-    src: "../assets/ff0ba2c3403a.jpg",
+    src: image5,
   },
   {
-    src: "../assets/bf51d58e2f22.jpg",
+    src: image6,
   },
 ];
 
@@ -202,4 +274,8 @@ const items = [
     src: "https://cdn.vuetifyjs.com/images/carousel/planet.jpg",
   },
 ];
+
+function navigateTo(path: string) {
+  router.push(path);
+}
 </script>

@@ -1,74 +1,50 @@
 <template>
-  <v-container fluid class="pt-10">
-    <v-card>
-      <div>
-        <v-card><h1>testing tgext element</h1></v-card>
-      </div>
-    </v-card>
+  <v-container style="background-color: black" fluid class="pa-0">
+    <v-carousel :show-arrows="false">
+      <v-carousel-item
+        width="auto"
+        v-for="(item, i) in imageItems"
+        :key="i"
+        :src="item.src"
+      >
+      </v-carousel-item>
+    </v-carousel>
   </v-container>
-  <!-- Rest of your content goes here -->
+  <v-container style="background-color: black; height: 100%">
+    <div>
+      <v-card><v-card-title>test</v-card-title></v-card>
+    </div>
+  </v-container>
 </template>
 
-<style lang="scss">
-/* Styles for the responsive navigation drawer */
-.v-navigation-drawer {
-  z-index: 3; /* Ensure the drawer appears above the content */
-}
-
-#home-bg-image {
-  position: relative;
-  top: 0;
-}
-#gradient-overlay-top {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-image: linear-gradient(
-    to top,
-    transparent 70%,
-    rgb(255, 255, 255)
-  );
-}
-
-#gradient-overlay-bottom {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 50%;
-  background-image: linear-gradient(
-    to bottom,
-    transparent 30%,
-    rgba(42, 41, 50)
-  );
-}
-
-#info-container {
-  background: rgba(42, 41, 50);
-  height: 50%;
-}
-</style>
+<style lang="scss"></style>
 
 <script lang="ts" setup>
-import { ref } from "vue";
-import { useRouter } from "vue-router";
+import image1 from "../assets/1a419a1b56a.jpg";
+import image2 from "../assets/992dcfbd2f51.jpg";
+import image3 from "../assets/c08162eb8ce3.jpg";
+import image4 from "../assets/4d10301514b.jpg";
+import image5 from "../assets/ff0ba2c3403a.jpg";
+import image6 from "../assets/bf51d58e2f22.jpg";
 
-const drawer = ref(false);
-const router = useRouter();
-
-const menuItems = [
-  { title: "Home", to: "/" },
-  { title: "Services", to: "/services" },
-  { title: "Portfolio", to: "/portfolio" },
-  { title: "Testimonials", to: "/testimonials" },
-  { title: "About Us", to: "/about" },
-  { title: "Contact Us", to: "/contact" },
+const imageItems = [
+  {
+    src: image1,
+  },
+  {
+    src: image2,
+  },
+  {
+    src: image3,
+  },
+  {
+    src: image4,
+  },
+  {
+    src: image5,
+  },
+  {
+    src: image6,
+  },
 ];
-
-function navigate(path) {
-  drawer.value = false; // Close the drawer on navigation
-  router.push(path);
-}
 </script>
