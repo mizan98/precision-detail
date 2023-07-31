@@ -19,7 +19,6 @@
         <v-toolbar-title> 07967 374 235 </v-toolbar-title>
         <v-spacer></v-spacer>
         <v-btn @click="scrollToTargetElement"> SERVICES </v-btn>
-        <v-btn @click="navigateTo('/portfolio')">Portfolio</v-btn>
         <v-btn @click="navigateTo('/contact')">Contact Us</v-btn>
       </v-row>
     </v-app-bar>
@@ -131,7 +130,6 @@ const router = useRouter();
 const menuItems = [
   { title: "Home", path: "/" },
   { title: "Services", path: "/services" },
-  { title: "Portfolio", path: "/portfolio" },
   { title: "Contact Us", path: "/contact" },
 ];
 
