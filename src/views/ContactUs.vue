@@ -1,6 +1,9 @@
 <template>
   <div>
-    <v-img src="../assets/Screenshot 2023-07-21 214649.png">
+    <v-img
+      class="hidden-md-and-up"
+      src="../assets/Screenshot 2023-07-21 214649.png"
+    >
       <!-- <v-card
         class="align-end pa-0"
         flat

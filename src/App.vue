@@ -35,12 +35,88 @@
           <v-list-item-title class="">{{ item.title }}</v-list-item-title>
         </v-list-item>
       </v-list>
+
+      <template v-slot:append>
+        <div class="pa-2 justify-center">
+          <v-card class="justify-center" elevation="0">
+            <v-row class="jusify-center">
+              <v-col cols="4">
+                <a href="https://www.instagram.com/precisiondetail/?hl=en-gb">
+                  <v-icon
+                    style="cursor: pointer"
+                    class="mdi mdi-instagram pl-9"
+                    color="black"
+                  ></v-icon>
+                </a>
+              </v-col>
+
+              <v-divider vertical></v-divider>
+              <v-col cols="4">
+                <a href="https://www.tiktok.com/@precision.detail?lang=en">
+                  <v-icon
+                    style="cursor: pointer"
+                    class="mdi mdi-music-note-outline pl-9"
+                    color="black"
+                  ></v-icon>
+                </a>
+              </v-col>
+
+              <v-divider vertical></v-divider>
+
+              <v-col cols="4">
+                <v-icon
+                  style="cursor: pointer"
+                  class="mdi mdi-phone-outline pl-9"
+                  color="black"
+                  @click="navigateTo('/contact')"
+                ></v-icon>
+              </v-col>
+            </v-row>
+          </v-card>
+        </div>
+      </template>
     </v-navigation-drawer>
     <v-main>
       <!-- Router view to render components based on the active route -->
       <router-view></router-view>
 
-      <v-footer></v-footer>
+      <v-footer class="justify-center" style="background-color: black">
+        <v-card color="black" elevation="0">
+          <v-row>
+            <v-col cols="4">
+              <a href="https://www.instagram.com/precisiondetail/?hl=en-gb">
+                <v-icon
+                  style="cursor: pointer"
+                  class="mdi mdi-instagram"
+                  color="white"
+                ></v-icon>
+              </a>
+            </v-col>
+
+            <v-divider vertical></v-divider>
+            <v-col cols="4">
+              <a href="https://www.tiktok.com/@precision.detail?lang=en">
+                <v-icon
+                  style="cursor: pointer"
+                  class="mdi mdi-music-note-outline"
+                  color="white"
+                ></v-icon>
+              </a>
+            </v-col>
+
+            <v-divider vertical></v-divider>
+
+            <v-col cols="4">
+              <v-icon
+                style="cursor: pointer"
+                class="mdi mdi-phone-outline"
+                color="white"
+                @click="navigateTo('/contact')"
+              ></v-icon>
+            </v-col>
+          </v-row>
+        </v-card>
+      </v-footer>
     </v-main>
   </v-app>
 </template>
@@ -52,18 +128,10 @@ import { useRouter } from "vue-router";
 const drawer = ref(false);
 const router = useRouter();
 
-const serviceItems = [
-  { title: "Click Me" },
-  { title: "Click Me" },
-  { title: "Click Me" },
-  { title: "Click Me 2" },
-];
-
 const menuItems = [
   { title: "Home", path: "/" },
   { title: "Services", path: "/services" },
   { title: "Portfolio", path: "/portfolio" },
-  { title: "About Us", path: "/about" },
   { title: "Contact Us", path: "/contact" },
 ];
 
