@@ -18,6 +18,7 @@
         <v-icon class="mdi mdi-phone-outline pr-2 justify"></v-icon>
         <v-toolbar-title> 07967 374 235 </v-toolbar-title>
         <v-spacer></v-spacer>
+        <v-btn @click="navigateTo('/')">Home</v-btn>
         <v-btn @click="scrollToTargetElement"> SERVICES </v-btn>
         <v-btn @click="navigateTo('/contact')">Contact Us</v-btn>
       </v-row>
