@@ -110,11 +110,15 @@
     </v-container>
   </div>
 
-  <v-container class="hidden-sm-and-down" id="scrollTargetElement">
+  <v-container fluid class="hidden-sm-and-down" id="scrollTargetElement">
     <div>
+      <v-card-title class="text-center text-h3 py-10"
+        >Our Services</v-card-title
+      >
+
       <v-row no-gutters>
-        <v-col class="pa-2" cols="md-6 sm-12 xs-12">
-          <v-card>
+        <v-col class="pa-1" cols="4">
+          <v-card rounded="0" elevation="0">
             <v-carousel>
               <v-carousel-item
                 v-for="(item, i) in imageItems"
@@ -124,16 +128,27 @@
                 <v-img :src="item.src"></v-img>
               </v-carousel-item>
             </v-carousel>
-            <v-card-text
-              >Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nostrum
-              similique quis obcaecati libero enim deserunt corporis aliquid,
-              magnam officia, sequi architecto eligendi! Ullam error aliquid
-              dolor rerum corrupti, ut eveniet.</v-card-text
-            >
+            <v-card-title class=""> Leather Restoration </v-card-title>
+            <v-card-text class="">
+              <div>
+                At precision detail our leather restoration service is available
+                at a great competitive price, with our team still serving a job
+                finished to perfection. The process is as follows:
+              </div>
+              <div class="px-8">
+                <ul>
+                  <li>Fully inspected</li>
+                  <li>Thorough cleaning</li>
+                  <li>Coating colour matching</li>
+                  <li>Airbush for even coverage</li>
+                  <li>Clear lacquer applied for long lasting protection</li>
+                </ul>
+              </div>
+            </v-card-text>
           </v-card>
         </v-col>
-        <v-col class="pa-2" cols="md-6 sm-12 xs-12">
-          <v-card>
+        <v-col class="pa-1" cols="4">
+          <v-card rounded="0" elevation="0">
             <v-carousel height="500" width="300">
               <v-carousel-item
                 width="auto"
@@ -143,18 +158,20 @@
               >
               </v-carousel-item>
             </v-carousel>
-            <v-card-text
-              >Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nostrum
-              similique quis obcaecati libero enim deserunt corporis aliquid,
-              magnam officia, sequi architecto eligendi! Ullam error aliquid
-              dolor rerum corrupti, ut eveniet.</v-card-text
-            >
+            <v-card-title class=""> Detailing </v-card-title>
+            <v-card-text class="">
+              <div>
+                All our products used are of the best quality. We ensure they
+                are not time saving or harmful to your pride and joy. Every
+                aspect of the car is carefully enhanced to ensure the highest
+                finish is acheived both inside and out when detailing our cars.
+              </div>
+            </v-card-text>
           </v-card>
         </v-col>
-      </v-row>
-      <v-row no-gutters>
-        <v-col class="pa-2" cols="md-6 sm-12 xs-12">
-          <v-card>
+
+        <v-col class="pa-1" cols="4">
+          <v-card rounded="0" elevation="0">
             <v-carousel height="500">
               <v-carousel-item
                 width="auto"
@@ -164,12 +181,25 @@
               >
               </v-carousel-item>
             </v-carousel>
-            <v-card-text
-              >Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nostrum
-              similique quis obcaecati libero enim deserunt corporis aliquid,
-              magnam officia, sequi architecto eligendi! Ullam error aliquid
-              dolor rerum corrupti, ut eveniet.</v-card-text
-            >
+            <v-card-title class=""> Body Work </v-card-title>
+            <v-card-text class="">
+              <div>
+                As automitive enthusiasts ourselves, we understand the pain you
+                feel when your car is damaged, this is why we make it our goal
+                ot restore these machines to their former glory. By stripping
+                each panel and repairing imperfection through careful handling,
+                we ernsure each car leaves looking fresh out of the show room.
+                As part of body repairs we offer:
+              </div>
+              <div class="px-8">
+                <ul>
+                  <li>Scratch repair</li>
+                  <li>Dent repair</li>
+                  <li>Body panel relaignments</li>
+                  <li>Machine polish and finish</li>
+                </ul>
+              </div>
+            </v-card-text>
           </v-card>
         </v-col>
       </v-row>

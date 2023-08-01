@@ -2,7 +2,7 @@
   <v-app>
     <!-- App bar -->
     <v-app-bar elevation="0">
-      <v-toolbar-title @click="navigateTo('/')">
+      <v-toolbar-title style="cursor: pointer" @click="navigateTo('/')">
         Precision Detail
       </v-toolbar-title>
 

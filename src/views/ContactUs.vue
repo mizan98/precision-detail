@@ -30,59 +30,70 @@
     </v-img>
 
     <div class="hidden-sm-and-down">
-      <div class="d-flex justify-center mb-6">
-        <v-card class="flex-wrap ma-2 pa-2 justify-center pr-10" elevation="0">
-          <h3 class="text-h3">Contact Us</h3>
+      <v-row style="width: 75%; margin-left: auto; margin-right: auto">
+        <v-col>
+          <v-card class="ma-2 pa-2 pr-10" elevation="0">
+            <h3 class="text-h3">Contact Us</h3>
 
-          <div
-            style="
-              border-left-color: rgb(167, 167, 167);
-              border-left-style: solid;
-            "
-          >
-            <v-card-text class="pb-1 text-h4 text-medium-emphasis"
-              >07967 374 235</v-card-text
+            <div
+              style="
+                border-left-color: rgb(167, 167, 167);
+                border-left-style: solid;
+              "
             >
-            <v-card-text class="pb-1 text-h4 text-medium-emphasis"
-              >info@precisiondetail.co.uk</v-card-text
-            >
+              <v-card-text class="pb-1 text-h4 text-medium-emphasis"
+                >07967 374 235</v-card-text
+              >
+              <v-card-text class="pb-1 text-h4 text-medium-emphasis"
+                >info@precisiondetail.co.uk</v-card-text
+              >
+            </div>
+          </v-card>
+          <v-row>
+            <v-col>
+              <v-card class="ma-2 pa-2" elevation="0">
+                <h3 class="text-h3">Find Us At</h3>
+
+                <div
+                  style="
+                    border-left-color: rgb(167, 167, 167);
+                    border-left-style: solid;
+                  "
+                >
+                  <v-card-text class="pb-1 text-h4 text-medium-emphasis"
+                    >Unit 3, At, 69 Kings Rd</v-card-text
+                  >
+                  <v-card-text class="pb-1 text-h4 text-medium-emphasis"
+                    >Tyseley</v-card-text
+                  >
+                  <v-card-text class="pb-1 text-h4 text-medium-emphasis"
+                    >Birmingham
+                  </v-card-text>
+                  <v-card-text class="pb-1 text-h4 text-medium-emphasis"
+                    >B11 2AX</v-card-text
+                  >
+                  <v-card-text class="pb-1 text-h4 text-medium-emphasis"
+                    >Mon - Fri (9am - 5:30pm)</v-card-text
+                  >
+                </div>
+              </v-card>
+            </v-col>
+          </v-row>
+        </v-col>
+
+        <v-col>
+          <div class="hidden-sm-and-down">
+            <v-card elevation="0" class="pa-2">
+              <v-img
+                cover
+                height="700"
+                src="../assets/Screenshot 2023-07-27 151916.png"
+              >
+              </v-img>
+            </v-card>
           </div>
-        </v-card>
-
-        <v-card class="flex-wrap ma-2 pa-2 pl-10" elevation="0">
-          <h3 class="text-h3">Find Us At</h3>
-
-          <div
-            style="
-              border-left-color: rgb(167, 167, 167);
-              border-left-style: solid;
-            "
-          >
-            <v-card-text class="pb-1 text-h4 text-medium-emphasis"
-              >Unit 3, At, 69 Kings Rd</v-card-text
-            >
-            <v-card-text class="pb-1 text-h4 text-medium-emphasis"
-              >Tyseley</v-card-text
-            >
-            <v-card-text class="pb-1 text-h4 text-medium-emphasis"
-              >Birmingham
-            </v-card-text>
-            <v-card-text class="pb-1 text-h4 text-medium-emphasis"
-              >B11 2AX</v-card-text
-            >
-            <v-card-text class="pb-1 text-h4 text-medium-emphasis"
-              >Mon - Fri (9am - 5:30pm)</v-card-text
-            >
-          </div>
-        </v-card>
-      </div>
-    </div>
-
-    <div class="hidden-sm-and-down">
-      <v-card elevation="0" class="px-2">
-        <v-img height="700" src="../assets/Screenshot 2023-07-27 151916.png">
-        </v-img>
-      </v-card>
+        </v-col>
+      </v-row>
     </div>
 
     <div class="hidden-md-and-up">
@@ -124,18 +135,14 @@
       </v-container>
     </div>
     <div class="hidden-md-and-up" style="background-color: black">
-      <v-row no-gutters>
-        <v-col>
-          <v-card color="black" elevation="0" class="px-2">
-            <v-img
-              cover
-              height="300"
-              src="../assets/Screenshot 2023-07-27 151916.png"
-            >
-            </v-img>
-          </v-card>
-        </v-col>
-      </v-row>
+      <v-card color="black" elevation="0" class="px-2">
+        <v-img
+          cover
+          height="300"
+          src="../assets/Screenshot 2023-07-27 151916.png"
+        >
+        </v-img>
+      </v-card>
     </div>
   </div>
 </template>
